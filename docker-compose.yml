@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    node-crone:
+        image: node-crone
+        ports:
+            - "3000:3000"
+        depends_on:
+            - crash-scrapper
+            - db-handler.jar
+    crash-scrapper:
+        image: crash-scrapper
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db-handler.jar
+    db-handler.jar:
+        image: db-handler.jar
+        ports:
+            - "8080:8080"
