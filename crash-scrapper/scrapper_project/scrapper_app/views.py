@@ -27,7 +27,7 @@ def runScrapper(request):
     try:
         activeGameUrl = 'https://api.roobet.com/crash/getActiveGame'
         crashHistoryUrl = 'https://api.roobet.com/crash/recentNumbers'
-        dbServiceUrl = 'http://localhost:8080'
+        dbServiceUrl = 'http://192.168.0.14:8080'
         headers = {'User-Agent': 'Mozilla/5.0'}
         # Active Game Data
         activeGameReq = Request(activeGameUrl, headers=headers)

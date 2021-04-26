@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const app = express();
 cron.schedule('0 */1 * * * *', () => {
-    axios.get('http://127.0.0.1:8000/api/scrapper').then(res => {
+    axios.get('http://192.168.0.14:8000/api/scrapper').then(res => {
         console.log("Response: ", res.data);
     })
     .catch(err => {
