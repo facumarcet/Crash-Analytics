@@ -6,6 +6,7 @@
 package com.crash.db.api;
 
 import com.crash.db.dto.RocketCrashInput;
+import com.crash.db.dto.RocketCrashOutput;
 import com.crash.db.services.RocketCrashService;
 import java.util.List;
 import java.util.logging.Level;
@@ -39,6 +40,16 @@ public class RocketCrashController {
         } catch (Exception e) {
             log.log(Level.SEVERE, e.toString(), e);
             return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    @GetMapping(value = "/getAll")
+    public ResponseEntity<List<RocketCrashOutput>> getAll() {
+         try {
+            return new ResponseEntity<>(rocketCrashSrv.getAllCrashes(), HttpStatus.OK);
+        } catch (Exception e) {
+            log.log(Level.SEVERE, e.toString(), e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

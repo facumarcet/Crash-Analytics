@@ -20,7 +20,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/test").csrf().disable().authorizeRequests().anyRequest().permitAll();
+        http.antMatcher("/rocketCrash").csrf().disable().authorizeRequests().anyRequest().permitAll();
     }
     
 }

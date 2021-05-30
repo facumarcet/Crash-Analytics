@@ -28,6 +28,11 @@ public class RocketCrash {
     
     @Column(name = "crash_on")
     private float crashOn;
+    
+    public RocketCrash(String gameId, float crashOn) {
+        setCrashOn(crashOn);
+        setGameId(gameId);
+    }
 
     public long getId_rocket_crash() {
         return id_rocket_crash;
